@@ -2,6 +2,7 @@ from starlette.responses import PlainTextResponse, JSONResponse
 from fastapi import FastAPI, HTTPException, status
 from yt_dlp import YoutubeDL
 from yt_dlp.version import __version__ as yt_dlp_version
+from typing import Union
 
 app = FastAPI(docs_url=None, redoc_url=None)
 
@@ -12,7 +13,7 @@ async def version_info():
 
 
 @app.get("/api/info", )
-async def get_info(url: str, quality: str | None = None):
+async def get_info(url: str, quality: Union[str, None] = None):
     ydl_options = {
         "retries": 3,
         "encoding": "utf8",
