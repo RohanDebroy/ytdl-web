@@ -33,7 +33,7 @@ const Container = styled(MuiContainer)({
 
 export default function Home() {
   return (
-    <Container component="main" maxWidth="md">
+    <Container component="main">
       <PageHead
         title="Home"
         description="Home of the Youtube-DL Web interface"

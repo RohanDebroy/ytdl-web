@@ -17,7 +17,7 @@ const Link = styled(MuiLink)({
 const Header: FC = () => {
   return (
     <AppBar position="static" color="transparent">
-      <Container maxWidth="md">
+      <Container>
         <Toolbar>
           <Link
             underline="none"
