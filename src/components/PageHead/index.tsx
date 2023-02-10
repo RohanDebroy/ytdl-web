@@ -7,9 +7,10 @@ type PageHeadProps = {
 };
 
 const PageHead: FC<PageHeadProps> = ({ title, description }) => {
+  const pageTitle = `${title} | Youtube-DL Web Interface`;
   return (
     <Head>
-      <title>{title} | Youtube-DL Web Interface</title>
+      <title>{pageTitle}</title>
       {!!description && <meta name="description" content={description} />}
       <meta name="viewport" content="width=device-width, initial-scale=1" />
       <link rel="icon" href="/favicon.ico" />

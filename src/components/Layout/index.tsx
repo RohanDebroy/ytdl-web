@@ -1,3 +1,4 @@
+import { Box } from "@mui/material";
 import React, { FC, ReactNode } from "react";
 import Header from "../Header";
 
@@ -7,10 +8,10 @@ type LayoutProps = {
 
 const Layout: FC<LayoutProps> = ({ children }) => {
   return (
-    <>
+    <Box sx={{ display: "flex", flexDirection: "column", minHeight: "100vh" }}>
       <Header />
-      <main>{children}</main>
-    </>
+      {children}
+    </Box>
   );
 };
 
