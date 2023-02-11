@@ -1,8 +1,7 @@
-import Entry from "@/components/Entry";
+import Entries from "@/components/Entries";
 import PageHead from "@/components/PageHead";
 import ytdl from "@/services/ytdl";
-import { YtdlResponse } from "@/types";
-import { stringifyQuery } from "@/utils/data";
+import { stringifyQuery } from "@/utils/url";
 import { Box, Container, styled, Typography } from "@mui/material";
 import { GetServerSidePropsContext, NextPage } from "next";
 import absoluteUrl from "next-absolute-url";
@@ -56,7 +55,8 @@ const TitleContainer = styled(Box)({
   },
 });
 
-const Result: NextPage<YtdlResponse> = (props) => {
+const Result: NextPage<Awaited<ReturnType<typeof ytdl>>> = (props) => {
+  console.log(props);
   return (
     <>
       <PageHead title="Result" />
@@ -79,19 +79,17 @@ const Result: NextPage<YtdlResponse> = (props) => {
               >
                 {props.title}
               </Typography>
-              <Typography variant="subtitle1">
+              <Typography component="span" variant="subtitle1">
                 uploaded by {props.uploader}
               </Typography>
-              <Typography variant="subtitle1">
+              <Typography component="span" variant="subtitle1">
                 duration of {props.duration}
               </Typography>
             </TitleContainer>
           </DetailsInnerContainer>
         </DetailsOuterContainer>
         <Container>
-          {props.formats.map((format) => (
-            <Entry key={format.format_id} format={format} />
-          ))}
+          <Entries formats={props.formats} bestFormatId={props.bestFormatId} />
         </Container>
       </Box>
     </>
