@@ -25,3 +25,7 @@ Deploy the example using [Vercel](https://vercel.com):
 I was using youtube-dl-exec but once it was deployed to vercel it didnot work because it requires a python runtime. I donot know how to assign python runtime in Vercel without using a python file.
 ### 2. Some URL's are not working
 If using the deployed version then, most probably they are ip restricted. Thought of a solution, will test and implement if working.
+
+
+## Notes
+- special thanks to the youtube-dl-web project by [Saanuregh](https://github.com/saanuregh/youtube-dl-web). I understood how to deploy python and nextjs under a single repo on vercel
