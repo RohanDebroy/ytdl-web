@@ -23,8 +23,8 @@ Deploy the example using [Vercel](https://vercel.com):
 ## FAQ
 ### 1. Why not using NextJS Api endpoints?
 I was using youtube-dl-exec but once it was deployed to vercel it didnot work because it requires a python runtime. I donot know how to assign python runtime in Vercel without using a python file.
-### 2. Some URL's are not working
-If using the deployed version then, most probably they are ip restricted. Thought of a solution, will test and implement if working.
+### 2. Getting access restriction error.
+If using the deployed version then, most probably the ip got rate limited due to continous request. Try again after sometime and it will work.
 
 
 ## Notes
