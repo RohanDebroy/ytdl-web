@@ -50,7 +50,7 @@ const Entries: FC<EntriesProps> = ({ bestFormatId, formats }) => {
         formats={recommendedFormats}
         keyPrefix="recommended"
       />
-      <Box component="section" pt={2}>
+      <Box component="section" pt={5}>
         <Typography variant={"h5"} fontWeight="bold">
           All Available Formats
         </Typography>
