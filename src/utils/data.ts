@@ -2,22 +2,16 @@ import { YtdlResponse } from "@/types";
 import { ParsedUrlQuery } from "querystring";
 import * as sd from "simple-duration";
 
-export const getFilteredData = ({
-  formats,
-  title,
-  uploader,
-  thumbnail,
-  duration,
-}: YtdlResponse) => {
+export const getFilteredData = (data: YtdlResponse) => {
+  const { formats, title, uploader, thumbnail, duration } = data;
   return {
     title,
     uploader,
     thumbnail,
     duration: sd.stringify(Number(duration)),
-    formats:
-      formats?.filter(
-        (format) => !("filesize" in format) || !!format.filesize
-      ) || [],
+    formats: formats.filter(
+      (format) => format.acodec !== "none" || format.vcodec !== "none"
+    ),
   };
 };
 
