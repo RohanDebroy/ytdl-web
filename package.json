@@ -3,11 +3,13 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "concurrently \"yarn backend\" \"yarn frontend\"",
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "backend": "uvicorn api.main:app --reload"
+    "frontend": "next dev",
+    "backend": "uvicorn api.main:app --reload",
+    "prepare": "python3 -m pip install -r requirements.txt"
   },
   "dependencies": {
     "@emotion/react": "^11.10.5",
@@ -27,5 +29,8 @@
     "react-dom": "18.2.0",
     "simple-duration": "^1.1.0",
     "typescript": "4.9.5"
+  },
+  "devDependencies": {
+    "concurrently": "^7.6.0"
   }
 }
