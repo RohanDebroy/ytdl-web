@@ -1,18 +1,5 @@
-import {
-  AppBar,
-  Container,
-  Toolbar,
-  Link as MuiLink,
-  styled,
-} from "@mui/material";
+import { AppBar, Container, Toolbar, Link } from "@mui/material";
 import React, { FC } from "react";
-
-const Link = styled(MuiLink)({
-  backgroundImage: "linear-gradient(45deg, orange, purple)",
-  backgroundClip: "text",
-  textFillColor: "transparent",
-  cursor: "pointer",
-});
 
 const Header: FC = () => {
   return (
@@ -20,7 +7,6 @@ const Header: FC = () => {
       <Container>
         <Toolbar>
           <Link
-            underline="none"
             href="/"
             sx={{
               mr: "auto",
@@ -32,7 +18,6 @@ const Header: FC = () => {
             href="https://github.com/RohanDebroy"
             target="__blank"
             rel="noopener"
-            underline="none"
           >
             Github
           </Link>

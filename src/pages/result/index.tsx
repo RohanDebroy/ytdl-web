@@ -57,7 +57,6 @@ const TitleContainer = styled(Box)({
 });
 
 const Result: NextPage<YtdlResponse> = (props) => {
-  console.log({ props });
   return (
     <>
       <PageHead title="Result" />

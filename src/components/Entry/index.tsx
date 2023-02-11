@@ -13,11 +13,11 @@ import ExpandMore from "@mui/icons-material/ExpandMore";
 import ContentCopyIcon from "@mui/icons-material/ContentCopy";
 import { Format } from "@/types";
 
-type FormatProps = {
+type EntryProps = {
   format: Format;
 };
 
-const Format: FC<FormatProps> = ({ format }) => {
+const Entry: FC<EntryProps> = ({ format }) => {
   const handleCopyToClipboard = (url: string) => {
     navigator.clipboard.writeText(url);
   };
@@ -51,7 +51,7 @@ const Format: FC<FormatProps> = ({ format }) => {
   );
 };
 
-export default Format;
+export default Entry;
 
 const Chips: FC<{ format: Format }> = ({ format }) => {
   const displayKeys: Array<keyof Format> = [
