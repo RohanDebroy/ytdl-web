@@ -13,8 +13,11 @@ export const getFilteredData = ({
     title,
     uploader,
     thumbnail,
-    duration: sd.stringify(duration),
-    formats: formats.filter((format) => !!format.filesize),
+    duration: sd.stringify(Number(duration)),
+    formats:
+      formats?.filter(
+        (format) => !("filesize" in format) || !!format.filesize
+      ) || [],
   };
 };
 
