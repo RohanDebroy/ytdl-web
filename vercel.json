@@ -3,6 +3,10 @@
     {
       "source": "/api/info",
       "destination": "api/main.py"
+    },
+    {
+      "source": "/api/version",
+      "destination": "api/main.py"
     }
   ]
 }
