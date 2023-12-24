@@ -1,7 +1,9 @@
 # Ytdl-Web Interface
+
 A simple web interface for yt_dlp built using [Next.js](https://nextjs.org/) and [Python](https://www.python.org/).
 
 ## How to start server
+
 If running locally go to `next.config.js` and uncomment the rewites function.
 
 run the development server:
@@ -14,18 +16,24 @@ yarn dev
 pnpm dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) within your browser to see the result.
+
 ## Deploy your own
-Deploy the example using [Vercel](https://vercel.com):
+
+Deploy this using [Vercel](https://vercel.com):
 
 [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/import/project?template=https://github.com/RohanDebroy/ytdl-web)
 
 ## FAQ
-### 1. Why not using NextJS Api endpoints?
-I was using youtube-dl-exec but once it was deployed to vercel it didnot work because it requires a python runtime. I donot know how to assign python runtime in Vercel without using a python file.
-### 2. Getting access restriction error.
-If using the deployed version then, most probably the ip got rate limited due to continous request. Try again after sometime and it will work.
 
+### 1. Why using python for the backend?
+
+Initially I tried using youtube-dl-exec for node but once it was deployed to vercel, I found out that it does not work without a python runtime. Searched all over the internet incase I can assign a python runtime along with a node runtime in Vercel without a separate deployment. In the end I ended up using python as backend.
+
+### 2. Getting access restriction error.
+
+There are a lot of different cases where this might happen. But mostly it's because of too much traffic from the same server so the website might have rate limited us for some time.
 
 ## Notes
-- special thanks to the youtube-dl-web project by [Saanuregh](https://github.com/saanuregh/youtube-dl-web). I understood how to deploy python and nextjs under a single repo on vercel
+
+- special thanks to the youtube-dl-web project by [Saanuregh](https://github.com/saanuregh/youtube-dl-web). I understood how to deploy python and nextjs under a single repo on vercel.

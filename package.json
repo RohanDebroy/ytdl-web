@@ -9,7 +9,7 @@
     "lint": "next lint",
     "frontend": "next dev",
     "backend": "uvicorn api.main:app --reload",
-    "prepare": "python3 -m pip install -r requirements.txt"
+    "prepare": "python -m venv .venv && source .venv/bin/activate && python3 -m pip install -r requirements.txt"
   },
   "dependencies": {
     "@emotion/react": "^11.10.5",
@@ -18,19 +18,19 @@
     "@mui/icons-material": "^5.11.0",
     "@mui/material": "^5.11.8",
     "@next/font": "13.1.6",
-    "@types/node": "18.13.0",
-    "@types/react": "18.0.27",
-    "@types/react-dom": "18.0.10",
     "eslint": "8.33.0",
-    "eslint-config-next": "13.1.6",
-    "next": "13.1.6",
+    "eslint-config-next": "^14.0.4",
+    "next": "^14.0.4",
     "next-absolute-url": "^1.2.2",
-    "react": "18.2.0",
-    "react-dom": "18.2.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
     "simple-duration": "^1.1.0",
     "typescript": "4.9.5"
   },
   "devDependencies": {
-    "concurrently": "^7.6.0"
+    "@types/node": "20.10.5",
+    "@types/react": "18.2.45",
+    "@types/react-dom": "18.2.18",
+    "concurrently": "^8.2.2"
   }
 }
