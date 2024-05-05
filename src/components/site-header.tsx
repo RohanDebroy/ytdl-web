@@ -12,7 +12,12 @@ export function SiteHeader() {
       <div className="container flex h-14 max-w-screen-2xl items-center">
         <Link
           href="/"
-          className="mr-auto flex items-center space-x-2 bg-gradient-to-tr from-orange-500 to-purple-500 bg-clip-text [-webkit-text-fill-color:transparent] text-2xl"
+          className={cn(
+            buttonVariants({
+              variant: "link",
+            }),
+            "mr-auto bg-gradient-to-tr from-orange-500 to-purple-500 bg-clip-text text-2xl [-webkit-text-fill-color:transparent]",
+          )}
         >
           <span className="font-bold sm:inline-block">{siteConfig.name}</span>
         </Link>

@@ -37,9 +37,9 @@ export default function RootLayout({ children }: RootLayoutProps) {
           disableTransitionOnChange
         >
           <div vaul-drawer-wrapper="">
-            <div className="relative flex min-h-screen flex-col bg-background">
+            <div className="relative flex min-h-screen flex-col items-stretch bg-background">
               <SiteHeader />
-              <main className="flex-1">{children}</main>
+              <main className="flex grow items-stretch">{children}</main>
             </div>
           </div>
           <TailwindIndicator />
