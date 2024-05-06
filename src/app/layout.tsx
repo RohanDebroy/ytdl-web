@@ -1,13 +1,12 @@
+import type { Metadata, Viewport } from "next";
 import "./globals.css";
-
-import { ReactNode } from "react";
-import { cn } from "@/utils/helpers";
-import { Viewport } from "next";
+import { siteConfig } from "@/config/site";
 import { GeistSans } from "geist/font/sans";
 import { ThemeProvider } from "@/components/providers";
 import { TailwindIndicator } from "@/components/tailwind-indicator";
 import { Analytics } from "@/components/analytics";
 import { SiteHeader } from "@/components/site-header";
+import { cn } from "@/utils/helpers";
 
 export const viewport: Viewport = {
   themeColor: [
@@ -16,19 +15,20 @@ export const viewport: Viewport = {
   ],
 };
 
-interface RootLayoutProps {
-  children: ReactNode;
-}
+export const metadata: Metadata = {
+  title: siteConfig.name,
+  description: siteConfig.description,
+};
+
+type RootLayoutProps = Readonly<{
+  children: React.ReactNode;
+}>;
 
 export default function RootLayout({ children }: RootLayoutProps) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <head />
       <body
-        className={cn(
-          "min-h-screen bg-background font-sans antialiased",
-          GeistSans.variable,
-        )}
+        className={cn("h-screen w-full overscroll-none", GeistSans.variable)}
       >
         <ThemeProvider
           attribute="class"
@@ -36,11 +36,9 @@ export default function RootLayout({ children }: RootLayoutProps) {
           enableSystem
           disableTransitionOnChange
         >
-          <div vaul-drawer-wrapper="">
-            <div className="relative flex min-h-screen flex-col items-stretch bg-background">
-              <SiteHeader />
-              <main className="flex grow items-stretch">{children}</main>
-            </div>
+          <div className="flex h-screen flex-col">
+            <SiteHeader />
+            <main className="h-full flex-1">{children}</main>
           </div>
           <TailwindIndicator />
           <Analytics />
