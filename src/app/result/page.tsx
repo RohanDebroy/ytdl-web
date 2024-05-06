@@ -24,6 +24,8 @@ type ResultProps = {
 
 export default async function Result({ searchParams: { url } }: ResultProps) {
   if (!url) redirect("/", RedirectType.replace);
+  // TODO: figure out a way to get the origin domain
+  // TODO: Make this portion a bit beautiful, Also handle the errors gracefully
   const response = await fetch(`http://localhost:3000/api/info?url=${url}`);
 
   if (response.status !== 200) redirect("/", RedirectType.replace);
@@ -80,7 +82,7 @@ export default async function Result({ searchParams: { url } }: ResultProps) {
               <FormatSection title="Best Formats" formats={recommended} />
               <Collapsible>
                 <CollapsibleTrigger className="mb-4 flex w-full justify-between">
-                  <h2>Expand all available formats</h2>
+                  <h2>Show all available formats</h2>
                   <RowSpacingIcon />
                 </CollapsibleTrigger>
                 <CollapsibleContent className="space-y-6">
