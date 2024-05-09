@@ -15,14 +15,15 @@ async def version_info():
 @app.get(
     "/api/info",
 )
-async def get_info(url: str, quality: Union[str, None] = None):
+async def get_info(url: str, quality: Union[str, None] = None, playlist: bool = True):
     ydl_options = {
         "retries": 3,
         "encoding": "utf8",
-        "noplaylist": True,
+        "noplaylist": not playlist,
         "dump_single_json": True,
         "format": quality if quality else "bestvideo+bestaudio/best",
-        "ignoreerrors": True
+        "ignoreerrors": True,
+        "extract_flat": playlist,
     }
     with YoutubeDL(ydl_options) as ytdl:
         try:

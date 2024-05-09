@@ -98,7 +98,7 @@ const Result: NextPage<Awaited<ReturnType<typeof ytdl>>> = (props) => {
 
 export async function getServerSideProps(context: GetServerSidePropsContext) {
   const { query, req } = context;
-  const allQuery = "?" + stringifyQuery(query);
+  const allQuery = "?" + stringifyQuery(query) + "&playlist=false";
   const { origin } = absoluteUrl(req);
   const videoInfo = await ytdl(allQuery, origin);
 
