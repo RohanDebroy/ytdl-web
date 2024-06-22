@@ -9,5 +9,7 @@
       "destination": "api/main.py"
     }
   ],
-  "exclude": ["api/**/*.*"]
+  "functions": {
+    "exclude": ["api/**/*.*"]
+  }
 }
