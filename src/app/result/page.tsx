@@ -59,9 +59,13 @@ export default async function Result({ searchParams: { url } }: ResultProps) {
               <Separator className="h-5" orientation="vertical" />
               <span>{humanizeNumber(data.view_count)} views</span>
               <Separator className="h-5" orientation="vertical" />
-              <span>{sd.stringify(Number(data.duration))}</span>
-              <Separator className="h-5" orientation="vertical" />
-              <span>{getRelativeTime(data.release_timestamp)}</span>
+              <span>{sd.stringify(Number(data.duration))} long</span>
+              {!!data.release_timestamp && (
+                <>
+                  <Separator className="h-5" orientation="vertical" />
+                  <span>{getRelativeTime(data.release_timestamp)}</span>
+                </>
+              )}
             </div>
             <Separator />
           </div>

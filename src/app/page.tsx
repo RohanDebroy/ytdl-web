@@ -13,7 +13,7 @@ export default function Home() {
         <div className="relative w-full">
           <Search className="absolute left-2.5 top-2.5 h-4 w-4 text-muted-foreground" />
           <Input
-            type="search"
+            type="url"
             placeholder="Enter a video URL"
             name="url"
             required

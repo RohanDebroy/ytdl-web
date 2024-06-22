@@ -36,4 +36,4 @@ There are a lot of different cases where this might happen. But mostly it's beca
 
 ## Notes
 
-- special thanks to the youtube-dl-web project by [Saanuregh](https://github.com/saanuregh/youtube-dl-web). I understood how to deploy python and nextjs under a single repo on vercel.
+- special thanks to the youtube-dl-web project by [Saanuregh](https://github.com/saanuregh/youtube-dl-web). His code really helped me.
