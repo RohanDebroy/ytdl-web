@@ -24,7 +24,8 @@ type ResultProps = {
 };
 
 export default async function Result({ searchParams: { url } }: ResultProps) {
-  if (!url) redirect("/", RedirectType.replace);
+  console.log(url);
+  // if (!url) redirect("/", RedirectType.replace);
 
   const response = await fetch(getUrl(`/api/info?url=${url}`));
 
