@@ -9,7 +9,7 @@
     "lint": "next lint",
     "frontend": "next dev",
     "backend": "uvicorn api.main:app --reload",
-    "prepare": "python -m venv .venv && source .venv/bin/activate && python3 -m pip install -r requirements.txt"
+    "prepare": "python3 -m pip install -r requirements.txt"
   },
   "dependencies": {
     "@emotion/react": "^11.10.5",
