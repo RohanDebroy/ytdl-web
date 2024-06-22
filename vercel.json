@@ -10,6 +10,6 @@
     }
   ],
   "functions": {
-    "exclude": ["api/**/*.*"]
+    "excludeFiles": ["api/**/*.*"]
   }
 }
