@@ -10,7 +10,7 @@
     }
   ],
   "functions": {
-    "api/info": {
+    "api/**/*.py": {
       "excludeFiles": "api/*"
     }
   }
