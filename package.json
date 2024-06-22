@@ -27,6 +27,7 @@
     "@radix-ui/react-slot": "^1.0.2",
     "@radix-ui/react-tooltip": "^1.0.7",
     "@vercel/analytics": "^1.2.2",
+    "@vercel/speed-insights": "^1.0.12",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.0.0",
     "eslint": "8.33.0",

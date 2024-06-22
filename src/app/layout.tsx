@@ -7,6 +7,7 @@ import { TailwindIndicator } from "@/components/tailwind-indicator";
 import { Analytics } from "@/components/analytics";
 import { SiteHeader } from "@/components/site-header";
 import { cn } from "@/utils/helpers";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 export const viewport: Viewport = {
   themeColor: [
@@ -43,6 +44,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
           <TailwindIndicator />
           <Analytics />
         </ThemeProvider>
+        <SpeedInsights />
       </body>
     </html>
   );

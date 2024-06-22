@@ -6,14 +6,14 @@ const nextConfig = {
    * only to be used for local testing,make sure the destination is correct.
    * For vercel deployments it is not necessary
    */
-  async rewrites() {
-    return [
-      {
-        source: "/api/:path*",
-        destination: "http://127.0.0.1:8000/api/:path*",
-      },
-    ];
-  },
+  // async rewrites() {
+  //   return [
+  //     {
+  //       source: "/api/:path*",
+  //       destination: "http://127.0.0.1:8000/api/:path*",
+  //     },
+  //   ];
+  // },
 };
 
 module.exports = nextConfig;
