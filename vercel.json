@@ -10,6 +10,8 @@
     }
   ],
   "functions": {
-    "excludeFiles": "api/**/*"
+    "excludeFiles": {
+      "/api/info": "api/*"
+    }
   }
 }
