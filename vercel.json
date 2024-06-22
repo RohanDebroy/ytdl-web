@@ -8,5 +8,6 @@
       "source": "/api/version",
       "destination": "api/main.py"
     }
-  ]
+  ],
+  "exclude": ["api/**/*.*"]
 }
