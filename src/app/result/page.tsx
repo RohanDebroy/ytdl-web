@@ -27,6 +27,7 @@ export default async function Result({ searchParams: { url } }: ResultProps) {
   if (!url) redirect("/", RedirectType.replace);
 
   const response = await fetch(getUrl(`/api/info?url=${url}`));
+  console.log(getUrl(`/api/info?url=${url}`));
   console.log(response);
 
   if (response.status !== 200) redirect("/", RedirectType.replace);
