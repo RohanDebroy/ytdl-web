@@ -38,7 +38,7 @@ export default function Home() {
         title="Home"
         description="Home of the Youtube-DL Web interface"
       />
-      <Paper component="form" method="get" action="/result">
+      <Paper component="form" method="get" action="/legacy/result">
         <InputBase
           autoComplete="off"
           name="url"

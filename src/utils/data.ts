@@ -3,7 +3,7 @@ import * as sd from "simple-duration";
 
 const getFilteredFormats = (formats: Format[]) =>
   formats.filter(
-    (format) => format.acodec !== "none" || format.vcodec !== "none"
+    (format) => format.acodec !== "none" || format.vcodec !== "none",
   );
 
 export const getFilteredData = (data: YtdlResponse) => {
@@ -31,7 +31,7 @@ const getVideoOnlyFormats = (formats: Format[]) =>
 
 const getAudioAndVideoFormats = (formats: Format[]) =>
   formats.filter(
-    (format) => format.acodec !== "none" && format.vcodec !== "none"
+    (format) => format.acodec !== "none" && format.vcodec !== "none",
   );
 
 export const sortFormats = (formats: Format[]) => {
@@ -41,3 +41,13 @@ export const sortFormats = (formats: Format[]) => {
     video: getVideoOnlyFormats(formats),
   };
 };
+
+export function filterFormats(formats: Format[], bestFormat: string) {
+  const filteredFormats = getFilteredFormats(formats);
+  return {
+    recommended: getRecommendedFormat(filteredFormats, bestFormat),
+    both: getAudioAndVideoFormats(filteredFormats),
+    audio: getAudioOnlyFormats(filteredFormats),
+    video: getVideoOnlyFormats(filteredFormats),
+  };
+}

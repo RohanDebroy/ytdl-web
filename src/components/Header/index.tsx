@@ -7,7 +7,7 @@ const Header: FC = () => {
       <Container>
         <Toolbar>
           <Link
-            href="/"
+            href="/legacy"
             sx={{
               mr: "auto",
             }}
