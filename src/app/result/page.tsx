@@ -15,6 +15,7 @@ import { Format, YtdlResponse } from "@/types";
 import { RowSpacingIcon } from "@radix-ui/react-icons";
 import { RedirectType, redirect } from "next/navigation";
 import * as sd from "simple-duration";
+import { getUrl } from "@/utils/url";
 
 type ResultProps = {
   searchParams: {
@@ -24,9 +25,8 @@ type ResultProps = {
 
 export default async function Result({ searchParams: { url } }: ResultProps) {
   if (!url) redirect("/", RedirectType.replace);
-  // TODO: figure out a way to get the origin domain
-  // TODO: Make this portion a bit beautiful, Also handle the errors gracefully
-  const response = await fetch(`http://localhost:3000/api/info?url=${url}`);
+
+  const response = await fetch(getUrl(`/api/info?url=${url}`));
 
   if (response.status !== 200) redirect("/", RedirectType.replace);
   const data = (await response.json()) as YtdlResponse;
